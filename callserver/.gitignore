@@ -1,0 +1,25 @@
+# Environment variables
+.env
+*.env
+callserver/.env
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Next.js
+.next/
+out/
+
+# Build files
+build/
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Chrome User Data (should never be committed)
+**/Google/Chrome/User Data/
