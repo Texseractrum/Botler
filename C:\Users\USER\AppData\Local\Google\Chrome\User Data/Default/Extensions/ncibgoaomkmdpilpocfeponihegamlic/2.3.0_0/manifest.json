@@ -1,0 +1,28 @@
+{
+   "action": {
+      "default_icon": "icons/web-eid-icon-128.png"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content.js" ],
+      "matches": [ "*://*/*" ]
+   } ],
+   "description": "Use your electronic identification card for secure authentication and digital signing.",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "icons/web-eid-icon-128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArxX8BL0HtGwLXEYVA6Fkc74KSHtnjkPBJEMS03gLUr7CcBF9+LNRuiIGKwbv8t77/EooaRJ0aEKzzJt7veJjQY6lvloFnHX1vJtvQz0p06ZICmavXm1RHMhb2VzEvSfbqI+XIthTN1RxapYMcZVMy8V4nKgyu54elpAd0WR/5z5PlIKRO1wg5IIgDGY5i5ro4OGP/DCYb3n85sT3fF7+i4xykJaYaayPjpGO87/SPEeKE5Ly/R57G6fZzutvsoVL0JTmgKSBykQi4NYhSlxL3I4y4ipnKBNzlc7Q/d8ioajo58VhSeedTnKAh+g+7jb68ezg8bswpuG0+9Z3cwHkXwIDAQAB",
+   "manifest_version": 3,
+   "name": "Web eID",
+   "permissions": [ "nativeMessaging" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.3.0",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "token-signing-page-script.js" ]
+   } ]
+}

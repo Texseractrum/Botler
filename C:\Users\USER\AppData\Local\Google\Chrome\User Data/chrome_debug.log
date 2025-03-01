@@ -1,0 +1,3 @@
+[31148:259:0228/223924.639772:INFO:chrome_browser_cloud_management_controller.cc(196)] No machine level policy manager exists.
+[31148:33799:0228/223924.640415:ERROR:ukm_database_backend.cc(147)] Failed to open UKM database: 0 database is locked
+[31148:259:0228/223925.726152:ERROR:new_tab_page_handler.cc(1306)] NewTabPage loaded into a non-browser-tab context

@@ -1,0 +1,19 @@
+{
+  "name": "convai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Texseractrum/Botler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Texseractrum/Botler/issues"
+  },
+  "homepage": "https://github.com/Texseractrum/Botler#readme",
+  "description": "conversational ai"
+}
