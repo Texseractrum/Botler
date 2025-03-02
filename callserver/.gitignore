@@ -1,13 +1,13 @@
 # Environment variables
 .env
 *.env
-callserver/.env
+.env.*
 
-# Node.js
+# Node modules
 node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+
+# Logs
+*.log
 
 # Next.js
 .next/

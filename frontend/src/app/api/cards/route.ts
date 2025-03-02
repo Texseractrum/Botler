@@ -55,6 +55,34 @@ export async function POST(request: Request) {
     console.log('API - Created new card:', cardWithId);
     console.log('API - Current cards in memory:', cards);
 
+    // If the card type is maintenance, make an outbound call
+    if (cardWithId.type === 'maintenance') {
+      try {
+        // Prepare the prompt and message
+        const prompt = `You are Eric, an outbound hotel receptionist. You are calling to a hotel employee about ${cardWithId.title} for the room ${cardWithId.roomNumber || 'not specified'}. Be friendly and professional and answer all questions.`;
+        const firstMessage = `Hello, you have been assigned the following task: ${cardWithId.title}`;
+        
+        // Make the API call to the outbound call service
+        const outboundResponse = await fetch('https://103a-144-82-8-30.ngrok-free.app/outbound-call', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt,
+            first_message: firstMessage,
+            number: process.env.OUTBOUND_CALL_NUMBER || '+447496076063' // Use environment variable or default
+          }),
+        });
+        
+        const outboundResult = await outboundResponse.json();
+        console.log('Outbound call initiated:', outboundResult);
+      } catch (callError) {
+        console.error('Failed to initiate outbound call:', callError);
+        // Continue with the response even if the call fails
+      }
+    }
+
     return NextResponse.json({
       status: 'success',
       message: 'Card created successfully',
